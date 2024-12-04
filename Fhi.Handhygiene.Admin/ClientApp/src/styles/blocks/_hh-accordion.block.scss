@@ -1,0 +1,20 @@
+.hh-accordion {
+    width: 100% !important;
+
+    &__card {
+        border: unset;
+        margin-bottom: 10px;
+        border: 1px solid #afaeae;
+        box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 50%);
+    }
+
+    &__icon {
+        transition: transform .3s ease;
+    }
+    // Bootstrap overrides
+    .accordion-header {
+       .accordion-button{
+        font-size: 1.0625rem;
+       }
+    }
+}

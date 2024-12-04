@@ -1,0 +1,14 @@
+Tabeller som skal scriptes:
+===========================
+Avdeling
+AvdelingKlinikk
+AvdelingRolle
+AvdelingType
+Helseforetak
+Institusjon
+InstitusjonType
+Klinikk
+PredefinertKommentar
+Region
+Regionalt Helseforetak
+Rolle

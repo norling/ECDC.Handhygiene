@@ -1,0 +1,10 @@
+.accordion-compact {
+    .accordion-button {
+        font-size: $fhi-core-font-size-1;
+        padding-left: 0;
+    }
+
+    .accordion-body {
+        --bs-accordion-body-padding-x: 0;
+    }
+}

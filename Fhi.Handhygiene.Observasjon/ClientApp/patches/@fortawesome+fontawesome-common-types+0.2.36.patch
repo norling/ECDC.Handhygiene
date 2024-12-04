@@ -1,0 +1,37 @@
+diff --git a/node_modules/@fortawesome/fontawesome-common-types/index.d.ts b/node_modules/@fortawesome/fontawesome-common-types/index.d.ts
+index 05ad379..67d77e3 100644
+--- a/node_modules/@fortawesome/fontawesome-common-types/index.d.ts
++++ b/node_modules/@fortawesome/fontawesome-common-types/index.d.ts
+@@ -21,7 +21,22 @@ export interface IconPack {
+   [key: string]: IconDefinition;
+ }
+ 
+-export type IconName = '500px' | 
++export type IconName =
++  'langnegl' |
++  'kunstignegl' |
++  'nyttkortpil' |
++  'four' |
++  'three' |
++  'two' |
++  'one' |
++  'plastforkle' |
++  'stellefrakk' |
++  'hette' |
++  'observasjonskort' |
++  'anderettsvern' |
++  'smittefrakk' |
++  'vernebriller' |
++  '500px' | 
+   'accessible-icon' | 
+   'accusoft' | 
+   'acquisitions-incorporated' | 
+@@ -7889,4 +7904,8 @@ export type IconName = '500px' |
+   'wrench' | 
+   'x-ray' | 
+   'yen-sign' | 
++  'langermet' |
++  'klokke' |
++  'droplet' |
++  'facesidecough' |
+   'yin-yang';

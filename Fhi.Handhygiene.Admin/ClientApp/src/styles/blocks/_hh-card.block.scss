@@ -1,0 +1,109 @@
+$card-border-radius: 24px;
+.hh-card-slider {
+  display: flex;
+  margin-bottom: 0.25rem;
+  width: 100%;
+  transform: translateX(0);
+  overflow: hidden;
+  padding-bottom: 9px;
+  padding-left: 2px;
+  padding-right: 2px;
+  max-width: 520px;
+
+  &__save-shadow {
+    background-color: $fhi-core-blue-3;
+    color: white;
+    width: 100%;
+    margin-right: -100%;
+    border-radius: $card-border-radius;
+
+    & .row {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__stripe {
+    background-color: $hh-lightgreen;
+  }
+
+  &__card {
+    border-radius: $card-border-radius;
+
+    touch-action: pan-y !important;
+    width: 100%;
+    background-color: white;
+    border: 2px solid black;
+    > * {
+      // All direct children gets padding, if not overridden
+      padding: 10px 15px;
+    }
+    //:last-child{
+    //  padding-bottom: 25px;
+    //}
+    //:first-child{
+    //  padding-top: 25px;
+    //}
+
+    &--active {
+      -webkit-box-shadow: 0px 5px 6px -3px rgb(0 0 0 / 90%);
+      box-shadow: 0px 5px 6px -3px rgb(0 0 0 / 90%);
+      border: none;
+    }
+
+    &--inactive {
+      background-color: $fhi-core-blue-3;
+      color: white;
+
+      .text-muted {
+        color: white !important;
+      }
+    }
+
+    &--no-border {
+      border: none;
+    }
+  }
+
+  &__aktivitet {
+    > button {
+      color: $fhi-core-grey-1;
+      border: none;
+      background-color: transparent;
+      font-size: xx-large;
+      width: 100%;
+      display: grid;
+    }
+
+    .tidbrukt {
+      font-size: small;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+
+    &--active {
+      > button {
+        color: $fhi-core-grey-4; //TODO: Bruk fhi-felles variable hvis mulig
+      }
+
+      .tidbrukt {
+        display: block;
+      }
+    }
+  }
+
+  &__delete-shadow {
+    background-color: $fhi-core-pink-light-1;
+    color: white;
+    z-index: -1;
+    width: 100%;
+    margin-left: -100%;
+    border-radius: $card-border-radius;
+
+    & .row {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

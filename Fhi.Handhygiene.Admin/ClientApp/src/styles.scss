@@ -1,0 +1,44 @@
+@import "/node_modules/ngx-toastr/toastr";
+@import "/node_modules/@folkehelseinstituttet/style/import/all.scss";
+@import "./node_modules/@folkehelseinstituttet/angular-components/styles/import/all";
+@import "/node_modules/@folkehelseinstituttet/angular-highcharts/styles/import/all";
+@import "styles/overrides/ngx-toastr";
+@import "styles/ng-bootstrap-hacks";
+@import "styles/variables/variables";
+@import "styles/blocks/hh-accordion.block";
+@import "styles/blocks/hh-navigasjonslenke.block";
+@import "styles/blocks/hh-side_menu.block";
+@import "styles/blocks/hh-institusjonsvalg.block";
+@import "styles/blocks/hh-bytt-institusjon-dropdown.block";
+@import "styles/blocks/hh-kodeverk-table.block";
+@import "styles/blocks/hh-hanske-handhygiene-radio-btn.block";
+@import "styles/blocks/hh-hanske-tabs.block";
+@import "styles/blocks/hh-card.block";
+@import "styles/blocks/hh-modal.block";
+@import "styles/blocks/hh-round-checkbox-list.block";
+@import "styles/blocks/hh-stadium-checkbox.block";
+
+.fhi-btn-flat,.fhi-btn-link {
+    box-shadow: none;
+    text-decoration: unset;
+    border: 0;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    color: #4996cc;
+    width: fit-content;
+    text-wrap: nowrap;
+}
+
+.table  {
+    width: 100% !important;
+}
+  
+.form-check-input:checked {
+    background-color: #4996cc;
+}
+  
+.fa-icon-warning {
+    color: #FFD700; 
+}

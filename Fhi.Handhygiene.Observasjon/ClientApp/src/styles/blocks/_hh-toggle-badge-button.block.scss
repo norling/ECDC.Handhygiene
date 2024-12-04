@@ -1,0 +1,41 @@
+.hh-toggle-badge-button-list {
+  &:nth-of-type(even){
+    margin-left: -0.5rem;
+  }
+}
+
+.hh-toggle-badge-button {
+  min-height: 2.5rem;
+  font-size: 19px;
+  text-align: left;
+  width: 100%;
+  background-color: white;
+  border-radius: 28px;
+  border: 1px solid black;
+  padding: 5px;
+  padding-top: 10px;
+  //box-shadow: inset 0px 0px 0px 1px black;
+
+  &__badge {
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+  }
+
+  @media screen and (min-width: 375px){
+    &__badge {
+      margin-left: calc($spacer / 2);
+    }
+  }
+
+  &--active {
+    //border: 2px solid black;
+    box-shadow: inset 0px 0px 0px 1px black;
+    .fa-check {
+      color: $fhi-core-charcoal-1;
+    }
+  }
+}
+
+

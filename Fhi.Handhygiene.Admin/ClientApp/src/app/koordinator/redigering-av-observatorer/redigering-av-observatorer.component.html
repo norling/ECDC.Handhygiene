@@ -1,0 +1,15 @@
+<div class="container">
+  <ng-container *ngIf="institusjonRapport else spinner ">
+    <div class="row">
+      <h3>Vedlikehold av observatører</h3>
+    </div>
+    <div>
+    <app-rediger-observatorer [institusjonId]="institusjonRapport.id"> </app-rediger-observatorer>
+    </div>
+  </ng-container>
+  <ng-template #spinner>
+    <div class="row">
+      <app-spinner class="col-12"></app-spinner>
+    </div>
+  </ng-template>
+</div>

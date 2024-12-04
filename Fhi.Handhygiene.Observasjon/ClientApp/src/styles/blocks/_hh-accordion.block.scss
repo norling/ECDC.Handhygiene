@@ -1,0 +1,44 @@
+.hh-accordion{
+  width: 100% !important;
+  &__card {
+    border: unset;
+    border-bottom: 1px solid $fhi-core-grey-1 !important;
+
+  }
+  &__icon {
+    transition: transform .3s ease;
+  }
+
+
+  // Bootstrap overrides
+  @media screen and (max-width: 359px){
+    .card-body {
+      padding: 0.25rem;
+    }
+  }
+
+  .card-header {
+    background-color: transparent;
+    border-bottom: unset;
+    padding-bottom: 0px;
+
+    &> button {
+      display: block;
+      width: 100%;
+      height: unset;
+      color: black;
+      padding-bottom: 5px;
+
+      &:hover,&:focus,&:active{
+        box-shadow: unset;
+        text-decoration: none;
+      }
+
+      &.collapsed {
+        .hh-accordion__icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="81.259148"
+   height="146.15004"
+   viewBox="0 0 81.259146 146.15004"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="pil-ingen kort.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="5.0944102"
+     inkscape:cx="32.486587"
+     inkscape:cy="89.215431"
+     inkscape:window-width="1858"
+     inkscape:window-height="1057"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     id="arrow-right-regular"
+     d="m 80.108483,99.642537 -4.054428,-1.718928 a 1.8869566,1.8869566 0 0 0 -2.474163,1.000875 L 60.111092,130.69328 7.7187172,1.1793326 a 1.8869566,1.8869566 0 0 0 -2.45502,-1.04237402 l -4.0788,1.65000002 A 1.8869566,1.8869566 0 0 0 0.13771118,4.2460826 L 52.530086,133.76003 l -31.7688,-13.4688 a 1.8869566,1.8869566 0 0 0 -2.474163,1.00088 l -1.718928,4.05443 a 1.8869566,1.8869566 0 0 0 1.000875,2.47416 l 42.885453,18.17955 a 1.8869566,1.8869566 0 0 0 2.474163,-1.00088 L 81.109358,102.1167 a 1.8869566,1.8869566 0 0 0 -1.000875,-2.474163 z"
+     fill="#cfd0cb"
+     style="stroke-width:0.999977" />
+</svg>

@@ -1,0 +1,35 @@
+.hh-stadium-checkbox {
+  color: black;
+  font-size: 16px;
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 28px;
+  padding: 0.5rem 0.3rem 0.5rem 0.6rem;
+  margin-bottom: 0.7rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+
+  &--checked {
+    background: white;
+    border-width: 2px;
+  }
+
+  &--white {
+    background: white;
+  }
+
+  &--disabled {
+    background: #dedede;
+    cursor: not-allowed;
+
+    & * {
+      cursor: not-allowed;
+    }
+  }
+
+  label {
+    margin-bottom: 0;
+    padding: 0 10px;
+    height: inherit;
+  }
+}

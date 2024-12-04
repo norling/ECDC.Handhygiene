@@ -1,0 +1,32 @@
+<ng-template #defaultHeaderTemplate let-item="item" let-opened="open">
+  {{item.title}}
+  {{opened}}
+</ng-template>
+
+<ng-template #defaultContentTemplate let-item="item" let-opened="open">
+  {{item.content}}
+  {{opened}}
+</ng-template>
+
+
+
+<div class="accordion-flush" ngbAccordion [closeOthers]="true" [ngClass]="{'hh-accordion':true}">
+  @for (item of items; track item) {
+    <div ngbAccordionItem [collapsed]="item !== 'First'">
+      <h2 ngbAccordionHeader>
+        <div class="d-flex align-items-center">
+          <div class="flex-grow-1 text-left">
+            <button ngbAccordionButton (click)="shown(item)">
+              <ng-container *ngTemplateOutlet="headerTemplate || defaultHeaderTemplate, context: {item: item }"> </ng-container>
+            </button>
+          </div>
+        </div>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-container *ngTemplateOutlet="contentTemplate || defaultContentTemplate, context: {item: item }"> </ng-container>
+        </div>
+      </div>
+    </div>
+  }
+</div>

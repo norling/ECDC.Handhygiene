@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'BrandonText Bold';
+    font-weight: 700;
+    font-style: normal;
+    src:
+        url('./BrandonText/BrandonText-Bold.woff2') format('woff2'),
+        url('./BrandonText/BrandonText-Bold.woff') format('woff'),
+        url('./BrandonText/BrandonText-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrandonText Bold Italic';
+    font-weight: 700;
+    font-style: italic;
+    src:
+        url('./BrandonText/BrandonText-BoldItalic.woff2') format('woff2'),
+        url('./BrandonText/BrandonText-BoldItalic.woff') format('woff'),
+        url('./BrandonText/BrandonText-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrandonText Medium';
+    font-weight: 500;
+    font-style: normal;
+    src:
+        url('./BrandonText/BrandonText-Medium.woff2') format('woff2'),
+        url('./BrandonText/BrandonText-Medium.woff') format('woff'),
+        url('./BrandonText/BrandonText-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrandonText Medium Italic';
+    font-weight: 500;
+    font-style: italic;
+    src:
+        url('./BrandonText/BrandonText-MediumItalic.woff2') format('woff2'),
+        url('./BrandonText/BrandonText-MediumItalic.woff') format('woff'),
+        url('./BrandonText/BrandonText-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrandonText Regular';
+    font-weight: 400;
+    font-style: normal;
+    src:
+        url('./BrandonText/BrandonText-Regular.woff2') format('woff2'),
+        url('./BrandonText/BrandonText-Regular.woff') format('woff'),
+        url('./BrandonText/BrandonText-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'BrandonText Regular Italic';
+    font-weight: 400;
+    font-style: italic;
+    src:
+        url('./BrandonText/BrandonText-RegularItalic.woff2') format('woff2'),
+        url('./BrandonText/BrandonText-RegularItalic.woff') format('woff'),
+        url('./BrandonText/BrandonText-RegularItalic.ttf') format('truetype');
+}

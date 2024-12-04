@@ -1,0 +1,11 @@
+.hh-side-menu {
+    word-break: break-all;
+
+    & .list-group-item {
+        cursor: pointer;
+
+        &:hover:not(.active) {
+            background-color: #eee;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.hh-avdeling-dropdown {
+  & .ng-select-container {
+    border-color: $fhi-core-grey-3;
+  }
+
+  & .ng-placeholder,
+  & .ng-option-disabled {
+    color: black !important;
+  }
+
+  &.ng-select.ng-select-single .ng-select-container {
+    height: $fhi-core-px * 38;
+  }
+}

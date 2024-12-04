@@ -1,0 +1,22 @@
+.hh-transparent-button {
+  border: none;
+  background-color: transparent;
+  &--small {
+    font-size: smaller;
+    fa-icon {
+      font-size: x-large;
+    }
+  }
+
+  &--large {
+    font-size: x-large;
+  }
+
+  &--wide {
+    width: 100%;
+    display:grid;
+  }
+}
+
+
+

@@ -1,0 +1,37 @@
+.hh-round-checkbox-list {
+  &__iconstack {
+    font-size: 2em;
+
+    @media (max-width: 420px) {
+      font-size: 1.5em;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 1em;
+    }
+  }
+
+  &__chosen-icon {
+    transition: all 600ms;
+    stroke: black;
+    stroke-width: 15;
+  }
+
+  &__circle {
+    transition: all 600ms;
+    color: #dedede;
+    &--active {
+      color: white;
+    }
+    &--chosen {
+      stroke: black;
+      stroke-width: 15;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+}

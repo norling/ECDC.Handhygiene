@@ -1,0 +1,5 @@
+<span style="margin-right:10px;">{{columnName}}</span>
+<i class="icon-arrow-down icon-sm" *ngIf="sortDirection === 'asc'"></i>
+<i class="icon-arrow-up icon-sm" *ngIf="sortDirection === 'desc'"></i>
+<i class="icon-arrow-down-up icon-sm" style="color: lightgray" *ngIf="sortDirection !== 'desc' && sortDirection !== 'asc'"></i>
+<ng-content></ng-content>

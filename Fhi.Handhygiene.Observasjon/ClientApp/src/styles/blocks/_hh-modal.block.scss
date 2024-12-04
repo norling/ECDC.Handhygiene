@@ -1,0 +1,66 @@
+$modalheight: 80vh;
+
+.hh-modal {
+
+  &.modal {
+    position: fixed;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+    bottom: 0;
+    top: unset !important;
+    left: unset !important;
+    height: unset !important;
+    width: 100vw;
+    animation-name: example;
+    animation-duration: 0.5s;
+  }
+
+  & .modal-open .modal {
+    overflow-y: hidden !important;
+  }
+
+  & .modal-dialog {
+    margin: 0 !important;
+  }
+
+  & .modal-content {
+    height: $modalheight !important;
+    overflow: auto;
+    border: unset !important;
+    border-radius: 10px 10px 0 0 !important;
+  }
+
+  & .modal-header {
+    border-bottom: unset !important;
+  }
+
+  & .modal-body {
+    flex: unset !important;
+  }
+
+  & .modal-footer {
+    justify-content: center !important;
+    border-top: unset !important;
+    /* border-bottom-right-radius: calc(0.3rem - 1px); */
+    /* border-bottom-left-radius: calc(0.3rem - 1px); */
+  }
+
+  @keyframes example {
+    from {
+      bottom: -$modalheight
+    }
+
+    to {
+      bottom: 0
+    }
+  }
+
+  @media (min-width: 576px) {
+    & .modal-dialog {
+      max-width: unset !important;
+      margin: 0 !important;
+    }
+  }
+}
