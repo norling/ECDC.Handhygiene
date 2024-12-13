@@ -1,0 +1,62 @@
+services:
+
+  fhi.handhygiene.admin:
+    image: ${DOCKER_REGISTRY-}fhihandhygieneadmin
+    build:
+      context: .
+      dockerfile: Fhi.Handhygiene.Admin/Dockerfile
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - ConnectionStrings__HandhygieneConnection=Server=database;Database=HandHygiene;User Id=sa;Password=SomeB4DSecur1ty; MultipleActiveResultSets=True; TrustServerCertificate=True
+    ports:
+     - 8081:8080
+
+  fhi.handhygiene.observasjon:
+    image: ${DOCKER_REGISTRY-}fhihandhygieneobservasjon
+    build:
+      context: .
+      dockerfile: Fhi.Handhygiene.Observasjon/Dockerfile
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - ConnectionStrings__HandhygieneConnection=Server=database;Database=HandHygiene;User Id=sa;Password=SomeB4DSecur1ty; MultipleActiveResultSets=True; TrustServerCertificate=True
+    ports:
+     - 8080:8080
+
+  database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=SomeB4DSecur1ty 
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P "$$MSSQL_SA_PASSWORD" -Q "SELECT 1"
+      interval: 5s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+    volumes:
+      - db-data:/var/opt/mssql/data:rw
+    depends_on:
+      init:
+        condition: service_completed_successfully
+          
+    ports:
+     - 1433:1433
+
+  # MSSQL runs as the mssql user, which doesn't automatically have r/w to
+  # the data volume, so we run it first as root in order to sort that out.
+  init:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    user: root
+    command: 
+      - /bin/sh
+      - -c
+      - "chown mssql:mssql /var/opt/mssql/data"
+    volumes:
+      - db-data:/var/opt/mssql/data:rw
+
+volumes:
+  db-data:
