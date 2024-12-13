@@ -15,7 +15,7 @@ import { RedigeringAvPredefinertKommentarerComponent } from './koordinator/redig
 import { RedigeringAvKlinikkerComponent } from "./koordinator/redigering-av-klinikker/redigering-av-klinikker.component";
 import { OversiktFhiAdminComponent } from './fhiadmin/oversikt-fhiadmin/oversikt-fhiadmin.component';
 import { ForesporselComponent } from './koordinator/foresporsel/foresporsel.component';
-import { HelseforetakComponent } from './fhiAdmin/helseforetak/helseforetak.component';
+import { HelseforetakComponent } from './fhiadmin/helseforetak/helseforetak.component';
 import { RedigeringAvKoordinatorerComponent } from './koordinator/redigering-av-koordinatorer/redigering-av-koordinatorer.component';
 import { EpostComponent } from './fhiadmin/epost/epost.component';
 import { RapporterComponent } from './koordinator/rapporter/rapporter.component';

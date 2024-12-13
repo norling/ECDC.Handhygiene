@@ -58,7 +58,7 @@ import {BeskyttelsesutstyrModalComponent} from "./koordinator/redigering-av-obse
 import { SokHprnummerLenkeComponent } from './_felles/sok-hprnummer-lenke/sok-hprnummer-lenke.component';
 import { RedigerSesjonsdataComponent } from './_felles/oversikt-sesjoner-visning/rediger-sesjonsdata/rediger-sesjonsdata.component';
 import { ForesporselComponent } from "./koordinator/foresporsel/foresporsel.component";
-import { HelseforetakComponent } from './fhiAdmin/helseforetak/helseforetak.component';
+import { HelseforetakComponent } from './fhiadmin/helseforetak/helseforetak.component';
 import { RedigerKoordinatorerForHelseforetakComponent } from './koordinator/redigering-av-koordinatorer/rediger-koordinatorer-for-helseforetak.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { RedigeringAvKoordinatorerComponent } from './koordinator/redigering-av-koordinatorer/redigering-av-koordinatorer.component';
