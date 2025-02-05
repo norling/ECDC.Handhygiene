@@ -9,7 +9,8 @@ services:
       database:
         condition: service_healthy
     environment:
-      - ConnectionStrings__HandhygieneConnection=Server=database;Database=HandHygiene;User Id=sa;Password=SomeB4DSecur1ty; MultipleActiveResultSets=True; TrustServerCertificate=True
+      - ASPNETCORE_URLS=http://+:8080 # Add ;https://+:8443 for https support
+      - ConnectionStrings__HandhygieneConnection=Server=database; Database=HandHygiene; Username=handhygiene; Password=SomeB4DSecur1ty; SSLMode=disable
     ports:
      - 8081:8080
 
@@ -22,41 +23,27 @@ services:
       database:
         condition: service_healthy
     environment:
-      - ConnectionStrings__HandhygieneConnection=Server=database;Database=HandHygiene;User Id=sa;Password=SomeB4DSecur1ty; MultipleActiveResultSets=True; TrustServerCertificate=True
+      - ASPNETCORE_URLS=http://+:8080 # Add ;https://+:8443 for https support
+      - ConnectionStrings__HandhygieneConnection=Server=database; Database=HandHygiene; Username=handhygiene; Password=SomeB4DSecur1ty; SSLMode=disable
     ports:
      - 8080:8080
 
   database:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: postgres:17.2
     environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=SomeB4DSecur1ty 
+      POSTGRES_DB: HandHygiene
+      POSTGRES_USER: handhygiene
+      POSTGRES_PASSWORD: SomeB4DSecur1ty 
     healthcheck:
-      test: /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P "$$MSSQL_SA_PASSWORD" -Q "SELECT 1"
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
       interval: 5s
       timeout: 5s
       retries: 2
       start_period: 10s
     volumes:
-      - db-data:/var/opt/mssql/data:rw
-    depends_on:
-      init:
-        condition: service_completed_successfully
-          
+      - db-data:/var/lib/postgresql/data:rw
     ports:
-     - 1433:1433
-
-  # MSSQL runs as the mssql user, which doesn't automatically have r/w to
-  # the data volume, so we run it first as root in order to sort that out.
-  init:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    user: root
-    command: 
-      - /bin/sh
-      - -c
-      - "chown mssql:mssql /var/opt/mssql/data"
-    volumes:
-      - db-data:/var/opt/mssql/data:rw
+     - 5432:5432
 
 volumes:
   db-data:

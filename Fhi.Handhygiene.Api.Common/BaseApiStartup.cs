@@ -1,7 +1,4 @@
-﻿
-
-using AspNetCore.DataProtection.SqlServer;
-using Fhi.Handhygiene.Api.Common.ExtensionMethods;
+﻿using Fhi.Handhygiene.Api.Common.ExtensionMethods;
 using Fhi.Handhygiene.Api.Common.HealthChecks;
 using Fhi.Handhygiene.Api.Common.Logging;
 using Fhi.Handhygiene.Dataaksess;
@@ -17,6 +14,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -75,9 +73,12 @@ namespace Fhi.Handhygiene.Api.Common
             services.LeggTilTjenester(Configuration, ApiTittel, ApiType);
 
             // Database-context
-            services.AddDbContext<HandhygieneContext>(dboptions =>
-                dboptions.UseSqlServer(Configuration.GetConnectionString(HandhygieneConnection), 
-                    sqloptions => sqloptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery)));
+            services.AddDbContext<HandhygieneContext>(dboptions => {
+                dboptions.UseNpgsql(Configuration.GetConnectionString(HandhygieneConnection),
+                    sqloptions => {
+                        sqloptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SingleQuery);
+                    });
+            });
 
             services.AddHelseIdWebAuthentication(Configuration).UseJwkKeySecretHandler().Build();
             services.AddScoped<IBrukerService ,BrukerService>();
@@ -214,7 +215,7 @@ namespace Fhi.Handhygiene.Api.Common
         {
             var connectionString = Configuration.GetConnectionString(HandhygieneConnection);
             var opts = new DbContextOptionsBuilder<HandhygieneContext>();
-            opts.UseSqlServer(connectionString);
+            opts.UseNpgsql(connectionString);
             using var context = new HandhygieneContext(opts.Options);
             
             Log.Logger = new LoggerConfiguration()
